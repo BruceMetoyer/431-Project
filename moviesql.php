@@ -7,7 +7,7 @@
         <h1>PHP, SQL, and MySQL</h1>
         <?php
 
-        $connect = mysqli_connect("localhost:8889","root","","Movie");
+        $connect = mysqli_connect("localhost:8889","root","root","Movie");
         if(!$connect){
             die("Error". mysqli_connect_error());
         }
