@@ -2,9 +2,10 @@ html {
     font-size: 22px
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
+    background-color: darkgray;
 }
 
 h1 {
