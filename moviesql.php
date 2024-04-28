@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>PHP, SQL, and MySQL</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Bruce Metoyer, Udoka Ndolo, Gregory Walters, Kevin Eliasmejia">
+    <meta name="description" content="This page contains multiple 
+    websites along with information from tables such as
+    actors, diretors, genre, and movie.">
+
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
 </head>
+
 <body>
-    <h1>PHP, SQL, and MySQL</h1>
+    <h1>Movie Website!</h1>
+    <hr>
+    <p>This page contains multiple
+        popular movies along with crucial information from tables such as
+        the actors in the movies, diretor of each movie and the genre of each movie.</p>
+    <hr>
+    <h2>Actor Table!</h2>
     <?php
 
     $connect = mysqli_connect('localhost:8889', 'root', 'root', 'Movie');
@@ -94,4 +109,5 @@
 
     ?>
 </body>
+
 </html>
