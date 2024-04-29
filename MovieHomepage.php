@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Bruce Metoyer, Udoka Ndolo, Gregory Walters, Kevin Eliasmejia">
+    <meta name="author" content="Bruce Metoyer, Udoka Ndolo, Gregory Walters, Kevin Elias-Mejia">
     <meta name="description" content="This page contains multiple 
     websites along with information from tables such as
     actors, diretors, genre, and movie.">
@@ -241,7 +241,7 @@
                 </main>
                 <footer>
                     <p>
-                        &copy;Bruce Metoyer, Udoka Ndolo, Gregory Walters, Kevin Eliasmejia
+                        &copy;Bruce Metoyer, Udoka Ndolo, Gregory Walters, Kevin Elias-Mejia
                     </p>
                     <p>
                         <a href="#">Back to Top</a>
