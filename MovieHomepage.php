@@ -45,7 +45,9 @@
         <ul>
             <li><a href="#Movie">Movies</a></li>
             <li><a href="#Poll">Review Poll</a></li>
-            <li><a href="movieconnection.php" target="_blank">Open SQL Movie Database Information</a></li>
+            <li><a href="MovieDirector.php" target="_blank">Open Director for each Movie</a></li>
+            <li><a href="MovieDetails.php" target="_blank">Open Details and actors for each Movie</a></li>
+            <li><a href="movieconnection.php" target="_blank">Open All Information for Actors, Movies, Directors, and Genres</a></li>
         </ul>
         <hr>
 
