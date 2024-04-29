@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 28, 2024 at 03:45 AM
+-- Generation Time: Apr 29, 2024 at 10:30 PM
 -- Server version: 5.7.39
 -- PHP Version: 7.4.33
 
@@ -82,7 +82,6 @@ INSERT INTO `Actor` (`ActorFirstName`, `ActorLastName`, `ActorMovieID`, `ActorAg
 ('Judi', 'Dench', 14, 89, 'F', 39),
 ('Johnny', 'Depp', 14, 60, 'M', 40),
 ('Denzel', 'Washington', 15, 69, 'M', 41),
-('Ryan', 'Gosling', 15, 43, 'M', 42),
 ('Ryan', 'Hurst', 15, 47, 'M', 43),
 ('Halle', 'Berry', 16, 57, 'F', 44),
 ('Sharon', 'Stone', 16, 66, 'F', 45);
@@ -162,30 +161,31 @@ CREATE TABLE `Movie` (
   `MovieGenre` varchar(255) DEFAULT NULL,
   `MovieRating` varchar(5) DEFAULT NULL,
   `MovieReleaseDate` date DEFAULT NULL,
-  `MovieID` int(11) NOT NULL
+  `MovieID` int(11) NOT NULL,
+  `DirectorMovieID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Movie`
 --
 
-INSERT INTO `Movie` (`MovieDuration`, `MovieName`, `MovieGenre`, `MovieRating`, `MovieReleaseDate`, `MovieID`) VALUES
-('2h 46m', 'Dune: Part Two', 'Science Fiction', '4.6', '2024-03-01', 1),
-('1h 34m', 'Kung Fu Panda 4', 'Action', '3.5', '2024-03-08', 2),
-('1h 55m', 'Godzilla x Kong: The New Empire', 'Action', '4.6', '2024-03-29', 3),
-('2h 49m', 'Interstellar', 'Science Fiction', '4.9', '2014-10-26', 4),
-('1h 49m', 'Civil War', 'Science Fiction', '2.7', '2024-04-12', 5),
-('2h 1m', 'Monkey Man ', 'Action ', '4.0', '2024-04-05', 6),
-('1h 30m', 'Friday', 'Comedy', '4.7', '1995-04-26', 7),
-('2h 1m', 'The Notebook', 'Romance', '4.7', '2004-06-25', 8),
-('1h 52m', 'The Conjuring', 'Horror', '4.7', '2013-07-19', 9),
-('1h 42m', 'A Walk to Remember', 'Romance', '4.7', '2002-01-25', 10),
-('1h 57m', 'Split', 'Thriller', '4.3', '2016-09-26', 11),
-('2h 55m', 'The Godfather', 'Drama', '4.7', '1972-03-24', 12),
-('2h 4m', 'The Mummy', 'Adventure', '4.7', '1999-05-04', 13),
-('1h 54m', 'Murder on the Orient Express', 'Mystery', '4.2', '2017-11-10', 14),
-('2h', 'Remember the Titans', 'Sports', '4.7', '2000-09-23', 15),
-('1h 44m', 'Catwoman', 'Action', '3.4', '2004-07-19', 16);
+INSERT INTO `Movie` (`MovieDuration`, `MovieName`, `MovieGenre`, `MovieRating`, `MovieReleaseDate`, `MovieID`, `DirectorMovieID`) VALUES
+('2h 46m', 'Dune: Part Two', 'Science Fiction', '8.7', '2024-03-01', 1, 1),
+('1h 34m', 'Kung Fu Panda 4', 'Action', '6.3', '2024-03-08', 2, 2),
+('1h 55m', 'Godzilla x Kong: The New Empire', 'Action', '6.5', '2024-03-29', 3, 3),
+('2h 49m', 'Interstellar', 'Science Fiction', '8.7', '2014-10-26', 4, 4),
+('1h 49m', 'Civil War', 'Science Fiction', '7.6', '2024-04-12', 5, 5),
+('2h 1m', 'Monkey Man ', 'Action ', '7.1', '2024-04-05', 6, 6),
+('1h 30m', 'Friday', 'Comedy', '7.2', '1995-04-26', 7, 7),
+('2h 1m', 'The Notebook', 'Romance', '7.8', '2004-06-25', 8, 8),
+('1h 52m', 'The Conjuring', 'Horror', '7.5', '2013-07-19', 9, 9),
+('1h 42m', 'A Walk to Remember', 'Romance', '7.3', '2002-01-25', 10, 10),
+('1h 57m', 'Split', 'Thriller', '7.3', '2016-09-26', 11, 11),
+('2h 55m', 'The Godfather', 'Drama', '9.2', '1972-03-24', 12, 12),
+('2h 4m', 'The Mummy', 'Adventure', '7.1', '1999-05-04', 13, 13),
+('1h 54m', 'Murder on the Orient Express', 'Mystery', '6.5', '2017-11-10', 14, 14),
+('2h', 'Remember the Titans', 'Sports', '7.8', '2000-09-23', 15, 15),
+('1h 44m', 'Catwoman', 'Action', '3.4', '2004-07-19', 16, 16);
 
 --
 -- Indexes for dumped tables
@@ -213,7 +213,8 @@ ALTER TABLE `Genre`
 -- Indexes for table `Movie`
 --
 ALTER TABLE `Movie`
-  ADD PRIMARY KEY (`MovieID`);
+  ADD PRIMARY KEY (`MovieID`),
+  ADD KEY `FK_directormid` (`DirectorMovieID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -236,8 +237,19 @@ ALTER TABLE `Director`
 --
 ALTER TABLE `Genre`
   MODIFY `GenreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Movie`
+--
+ALTER TABLE `Movie`
+  ADD CONSTRAINT `FK_directormid` FOREIGN KEY (`DirectorMovieID`) REFERENCES `Director` (`DirectorID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
