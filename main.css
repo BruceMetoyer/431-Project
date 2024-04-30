@@ -1,11 +1,10 @@
 /* Resetting default styles */
-body,
-html {
+body,html {
     font-size: 30px;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: darkgray;
+    background-color: rgb(255, 248, 210);
 }
 
 /* General styles */
@@ -40,30 +39,50 @@ nav ul li a:hover {
     color: red;
 }
 
-/* Card styles */
-.card {
-    width: 200px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.titleCard {
+    color: rgb(111, 235, 252);
 }
 
-.card-content {
-    padding: 20px;
-    width: 200px;
+#Movie h2 {
+    color: red;
 }
 
-.card h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #333;
+#Action h3{
+    color: darkorange;
 }
 
-.card p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #666;
+#Adventure h3{
+    color:blueviolet;
+}
+
+#Comedy h3{
+    color: goldenrod;
+}
+
+#Drama h3{
+    color: plum;
+}
+
+#Horror h3{
+    color: crimson;
+}
+
+#Mystery h3{
+    color: darkblue;
+}
+
+#Romance h3{
+    color: pink;
+}
+
+#Science_Fiction h3{
+    color: orangered;
+}
+
+#Sports h3{
+    color: mediumslateblue;
+}
+
+#Thriller h3{
+    color: chartreuse;
 }
