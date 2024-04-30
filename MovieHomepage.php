@@ -15,7 +15,7 @@
         <a class="navbar-brand" href="MovieHomepage.php"><img class="logo" src="images/movie-logo-vector-19783450.jpg" alt="" width="80" height="64"></a>
         <header>
             <h1>Welcome to BUGK Films!</h1>
-            <marquee>Welcome To <i>BUGK Films</i>.com</marquee>
+            <marquee class="titleCard">Welcome To <i>BUGK Films</i>.com</marquee>
             <label class="online">Stream Some of your favorite Movies Today!</label>
             <hr>
 
@@ -46,8 +46,7 @@
             <li><a href="#Movie">Movies</a></li>
             <li><a href="#Poll">Review Poll</a></li>
             <li><a href="MovieDirector.php" target="_blank">Open Director for each Movie</a></li>
-            <li><a href="MovieDetails.php" target="_blank">Open Details and actors for each Movie</a></li>
-            <li><a href="movieconnection.php" target="_blank">Open All Information for Actors, Movies, Directors, and Genres</a></li>
+            <li><a href="MovieDetails.php" target="_blank">Open Movie Details and Actors for each Movie</a></li>
         </ul>
         <hr>
 
